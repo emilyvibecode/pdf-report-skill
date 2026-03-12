@@ -1,0 +1,23 @@
+/* Theme: Forest — natural, ESG/sustainability reports */
+:root {
+  --ink:        #0A1F14;
+  --espresso:   #1B3426;
+  --body-color: #2D4438;
+  --stone:      #5A7264;
+  --clay:       #7A9486;
+  --terra:      #2D6A4F;
+  --copper:     #52B788;
+  --sage:       #40916C;
+  --sand:       #D4A373;
+  --ochre:      #B7AD6C;
+  --surface:    #F6FAF7;
+  --paper:      #FFFFFF;
+  --wash:       #EAF2EC;
+  --border:     #D2DED6;
+  --heat-high:  rgba(45, 106, 79, 0.12);
+  --heat-med:   rgba(45, 106, 79, 0.06);
+  --heat-low:   rgba(82, 183, 136, 0.04);
+}
+.hero {
+  background: linear-gradient(160deg, #0A1F14 0%, #1B4332 50%, #2D6A4F 100%);
+}

@@ -1,0 +1,23 @@
+/* Theme: Crimson — bold, security/threat reports, high-contrast */
+:root {
+  --ink:        #1A0A0A;
+  --espresso:   #2D1515;
+  --body-color: #3B2424;
+  --stone:      #6B4A4A;
+  --clay:       #8C6666;
+  --terra:      #DC2626;
+  --copper:     #EF4444;
+  --sage:       #7F5539;
+  --sand:       #FCA5A5;
+  --ochre:      #F59E0B;
+  --surface:    #FDF8F8;
+  --paper:      #FFFFFF;
+  --wash:       #FEF2F2;
+  --border:     #F5D5D5;
+  --heat-high:  rgba(220, 38, 38, 0.12);
+  --heat-med:   rgba(220, 38, 38, 0.06);
+  --heat-low:   rgba(239, 68, 68, 0.04);
+}
+.hero {
+  background: linear-gradient(160deg, #1A0A0A 0%, #450A0A 50%, #7F1D1D 100%);
+}

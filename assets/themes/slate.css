@@ -1,0 +1,23 @@
+/* Theme: Slate — minimal, neutral, modern (Anthropic-inspired restraint) */
+:root {
+  --ink:        #18181B;
+  --espresso:   #27272A;
+  --body-color: #3F3F46;
+  --stone:      #71717A;
+  --clay:       #A1A1AA;
+  --terra:      #52525B;
+  --copper:     #71717A;
+  --sage:       #6B7F5E;
+  --sand:       #D4D4D8;
+  --ochre:      #A1A1AA;
+  --surface:    #FAFAFA;
+  --paper:      #FFFFFF;
+  --wash:       #F4F4F5;
+  --border:     #E4E4E7;
+  --heat-high:  rgba(82, 82, 91, 0.10);
+  --heat-med:   rgba(82, 82, 91, 0.05);
+  --heat-low:   rgba(113, 113, 122, 0.04);
+}
+.hero {
+  background: linear-gradient(160deg, #18181B 0%, #27272A 50%, #3F3F46 100%);
+}

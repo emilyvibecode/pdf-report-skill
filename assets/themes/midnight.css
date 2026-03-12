@@ -1,0 +1,23 @@
+/* Theme: Midnight Blue — corporate, authoritative, cool-toned */
+:root {
+  --ink:        #0F1A2E;
+  --espresso:   #1A2744;
+  --body-color: #2D3748;
+  --stone:      #5A6577;
+  --clay:       #7B8794;
+  --terra:      #2962FF;
+  --copper:     #5B8DEF;
+  --sage:       #00BFA5;
+  --sand:       #90CAF9;
+  --ochre:      #FFB74D;
+  --surface:    #F8FAFC;
+  --paper:      #FFFFFF;
+  --wash:       #EEF2F7;
+  --border:     #DDE3EC;
+  --heat-high:  rgba(41, 98, 255, 0.12);
+  --heat-med:   rgba(41, 98, 255, 0.06);
+  --heat-low:   rgba(91, 141, 239, 0.04);
+}
+.hero {
+  background: linear-gradient(160deg, #0F1A2E 0%, #1A2E52 50%, #1E3A5F 100%);
+}
