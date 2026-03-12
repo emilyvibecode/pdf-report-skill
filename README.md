@@ -77,12 +77,16 @@ bash scripts/render.sh references/examples/test-02-hero-stats.html output.pdf
 
 ## Design Principles
 
-- **Cover images should be visually striking and bold** — they set the tone for the entire report
+- **No emojis** — never use emoji characters in reports; use descriptive titles and visual design instead
+- **Custom color palettes per report** — don't default to preset themes; design colors that fit the subject, brand, and tone
+- **Font readability is non-negotiable** — if the display font looks too thin against your color scheme, boost weight or darken text
+- **Cover images must be visually striking and bold** — they set the tone for the entire report
+- **Generate custom brand assets** — create logos, icons, and section imagery using AI image generation to match the report's identity
 - **Chapters start on a new page** — clean separation between major sections
 - **Exhibits start on a new page** — charts and tables get full-page real estate, no awkward splits
-- **Pre-render charts as static images** — ECharts rendered server-side via Node.js for reliable PDF output
+- **Pre-render charts as static images** — use ECharts server-side rendering via Node.js; JS-based charts frequently fail in PDF generation
 - **Serif for headlines, sans for structure** — Instrument Serif for display, Instrument Sans for UI, Literata for body text
-- **Restrained color** — one primary accent; generous whitespace signals confidence
+- **No pure black** — use dark navy/charcoal as ink color; generous whitespace signals confidence
 
 ## Installation
 

@@ -129,56 +129,60 @@ Place both HTML and PDF in `Public/` directory for web access. Provide the user 
 - **Separator** — ◆ ◆ ◆ diamond divider
 - **Footer** — disclaimers, copyright
 
-## ECharts Specifics
+## Data Visualization
 
-**Always wrap chart init in `document.fonts.ready`** to ensure fonts are loaded:
-```javascript
-document.fonts.ready.then(function() {
-  echarts.init(el, null, {renderer: 'svg'}).setOption({...});
-});
+**Pre-render charts as static PNG images** using the ECharts skill's server-side renderer. JS-based charts embedded in HTML frequently fail to render during PDF generation (Chromium doesn't always wait for async JS).
+
+**Recommended workflow:**
+1. Use the ECharts skill (`~/.openclaw/workspace/skills/echarts/scripts/render.js`) to render each chart as a PNG
+2. Embed the PNG in the HTML with `<img src="chart.png" style="width:100%;height:auto;display:block">`
+3. This guarantees charts appear in the final PDF
+
+```bash
+# Install ECharts if needed
+npm install --prefix ~/.openclaw/workspace/skills/echarts/scripts echarts canvas
+
+# Render a chart
+echo '{"xAxis":{"type":"category","data":["Q1","Q2","Q3","Q4"]},...}' | \
+  node ~/.openclaw/workspace/skills/echarts/scripts/render.js --out chart.png --width 860 --height 340
 ```
 
-**Use SVG renderer** for crisper PDF output: `{renderer: 'svg'}`
+**Chart styling tips:**
+- Use colors from your report's custom palette (match `--terra`, `--ink`, `--copper`, etc.)
+- Set `backgroundColor: "#FFFFFF"` for clean white chart backgrounds
+- Use `fontSize: 11-12` for axis labels, `fontWeight: "bold"` for value labels
+- Donut charts: use short label names (15 chars max) to prevent truncation
 
-**Chart container heights**: Set explicit height (280–400px). Don't rely on responsive sizing.
+See `references/echarts.md` for full chart templates and configuration examples.
 
-**Donut chart labels**: Use short label names (≤15 chars) to prevent truncation. Or use a separate legend instead of direct labels.
+## Color & Theming
 
-**Our palette for charts:**
-```javascript
-var palette = {
-  terra:'#B85C38', ink:'#2C2420', copper:'#C97B4B', sage:'#6B7F5E',
-  clay:'#8C7E7A', sand:'#D4B896', border:'#E5DDD5', wash:'#F3EDE7',
-  body:'#4A4340', stone:'#6B6260', espresso:'#3E3530'
-};
-```
+**Do not limit yourself to preset themes.** The CSS design system uses CSS custom properties (variables) that can be overridden per report. Create a custom color palette that fits the subject matter, brand, or tone of each report.
 
-See `references/echarts.md` for full chart templates.
+The preset themes in `assets/themes/` (Midnight Blue, Forest, Crimson, Slate) are **starting points and examples**, not a closed set. For any report, you can and should define custom `--ink`, `--terra`, `--ochre`, `--surface`, etc. values that match the topic.
 
-## Themes
-
-Default: **Warm Earth** — terracotta, copper, sage, sand on warm whites.
-
-| Theme | File | Best for |
-|-------|------|----------|
-| Warm Earth | (default in base.css) | General purpose, editorial |
-| Midnight Blue | `assets/themes/midnight.css` | Corporate, finance, tech |
-| Forest | `assets/themes/forest.css` | ESG, sustainability, nature |
-| Slate | `assets/themes/slate.css` | Minimal, neutral, academic |
-| Crimson | `assets/themes/crimson.css` | Security, alerts, bold reports |
+**Guidelines for custom palettes:**
+- Ensure sufficient contrast between body text and backgrounds (WCAG AA minimum)
+- `--ink` should be dark enough for strong headlines
+- `--body-color` must be clearly readable on `--surface` and `--paper` backgrounds
+- `--terra` is the primary accent — use it for labels, exhibit rules, and interactive elements
+- `--ochre` is the highlight accent — use for stat numbers, emphasis, pull quote borders
+- Test readability: if the display font (Instrument Serif) looks too thin against your background, increase `font-weight` to 500+ or darken the text color
 
 ## Design Principles
 
 1. **Serif headlines, sans for structure.** Instrument Serif for titles. Instrument Sans for labels/UI. Literata for body text.
-2. **Instrument Serif is never bold.** Only weight 400.
-3. **Restrained color.** Terra (#B85C38) is the primary accent. Most of the page is text on white/warm backgrounds.
-4. **No pure black.** Use `--ink` (#2C2420). Pure black looks harsh.
-5. **Content density matters.** Every page should earn its existence.
-6. **Generate cover art for premium reports.** Custom illustration = instant quality signal.
-7. **Use ECharts for complex data.** HTML bars for simple comparisons; ECharts for everything else.
-8. **Wrap ECharts in `document.fonts.ready`.** Non-negotiable for PDF rendering.
-9. **Use short labels on donut charts.** Long labels get truncated.
-10. **Always attribute data sources.** Use `.exhibit-source` below every chart.
+2. **Font readability is non-negotiable.** If the display font looks too thin against the color scheme, boost weight or darken text. Always test contrast.
+3. **Custom palettes per report.** Don't default to presets. Design a color palette that fits the subject, brand, and tone.
+4. **No pure black.** Use a very dark navy/charcoal as `--ink`. Pure black looks harsh.
+5. **No emojis.** Never use emoji characters in report content. Use descriptive titles and visual design instead.
+6. **Cover images must be visually striking and bold.** The cover sets the tone for the entire report. Invest in a strong, cinematic cover image.
+7. **Generate custom brand assets.** Create logos, icons, and section images as needed. Use AI image generation for custom branded imagery that matches the report's identity.
+8. **Every chapter starts on a new page.** Clean separation between major sections.
+9. **Every exhibit starts on a new page.** Charts and tables get full-page real estate. No awkward splits across pages.
+10. **Pre-render charts as static images.** Use the ECharts skill to render charts server-side as PNG. JS-based charts frequently fail to render in PDF generation. Static images are reliable.
+11. **Content density matters.** Every page should earn its existence.
+12. **Always attribute data sources.** Use `.exhibit-source` below every chart and table.
 
 ## Reference Files
 
