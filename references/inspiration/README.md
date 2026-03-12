@@ -1,107 +1,102 @@
 # Visual Reference Guide
 
-Screenshots of rendered report templates showing the design system in action. Use these to understand the **visual quality bar** — the typography, spacing, color restraint, and overall vibe each layout should achieve.
+This directory contains visual references showing what reports from this skill should look and feel like. There are two types:
 
-An AI agent generating a report should reference these images to match the look and feel, not just the HTML structure.
+1. **Real report references** (`ref-*.png`) — Pages from actual reports we've built. These are the gold standard.
+2. **Template screenshots** (`test-*.png`) — Individual component test renders showing each layout type.
 
-## Screenshots
+An AI agent generating a report should look at these images to match the vibe — the typography, spacing, color restraint, and overall polish.
+
+---
+
+## Real Report References
+
+These are from actual multi-page reports built with this design system. They show the quality bar at full production fidelity.
+
+### Incident Report (Post-Mortem)
+
+A SEV-1 incident post-mortem report. Dark warm palette, dramatic cover art, professional data visualization.
+
+| File | What it shows | Key design elements |
+|------|---------------|---------------------|
+| `ref-incident-cover.png` | **Cover page** with AI-generated art | Dramatic vertical light beam, SEV-1 badge, italic accent title, metadata footer row |
+| `ref-incident-dashboard.png` | **Impact dashboard + exec summary** | 4-stat banner (duration, users, revenue, SLA), drop-cap lead paragraph |
+| `ref-incident-timeline.png` | **Vertical timeline** | Gradient timeline line, dot markers, date/title/desc per event, two-column text above |
+| `ref-incident-chart.png` | **Combo chart** (bar + line) | Dual-axis chart showing error rate vs request volume, shaded incident window |
+| `ref-incident-table.png` | **Data table + callout** | Regional impact table with heat-map highlights, blockquote callout with left border |
+| `ref-incident-cards.png` | **Root cause cards** | Numbered cause cards (01, 02, 03) with section divider page |
+| `ref-incident-code-barchart.png` | **Code diff + bar chart** | Technical detail box with code, horizontal bar chart with contributing factors |
+| `ref-incident-quote.png` | **Pull quote + section intro** | VP Engineering quote with attribution, section 4 introduction |
+
+**What makes it great:**
+- The AI-generated cover art (glowing fissure) creates an immediate emotional hook
+- Stats are scannable in under 3 seconds
+- Timeline uses visual weight (dot size, line gradient) to show progression
+- Tables have heat-map coloring to draw eyes to the worst numbers
+- Pull quotes break up dense text sections
+
+### China Report
+
+A long-form technology analysis report in consulting style.
+
+| File | What it shows | Key design elements |
+|------|---------------|---------------------|
+| `ref-china-cover.png` | **Cover + executive summary** | Dark teal gradient hero, gold italic accent word, drop-cap body text, metadata row |
+
+**What makes it great:**
+- The teal-to-navy gradient feels authoritative and premium
+- Gold accent on one word ("Phenomenon") creates a focal point
+- Metadata row (date, authors, reading time) gives instant context
+- The transition from dark hero to white exec summary creates visual rhythm
+
+### V2 Template Report
+
+A cleaner, refined version of the template system.
+
+| File | What it shows | Key design elements |
+|------|---------------|---------------------|
+| `ref-v2-cover.png` | **Cover page** | Dark hero, serif title with gold italic accent, subtitle, metadata row |
+| `ref-v2-stats.png` | **Executive summary + stats** | Drop-cap lead, accent top border, stat banner with gold numbers |
+| `ref-v2-chart.png` | **Key statistics page** | 4-stat grid on dark banner with gold numerals |
+
+---
+
+## Template Screenshots
+
+Individual component tests showing each layout type in isolation. Each is exactly 1 page.
 
 ### Default Theme (Warm Earth)
 
-#### `test-02-hero-stats.png` — Hero + Stat Banner
-**Layout:** Dark espresso hero gradient → 4-stat metric banner → breathing room
-**What to notice:**
-- Warm earth palette: espresso browns, copper accents, cream backgrounds
-- Instrument Serif italic on the accent word ("*Performance*") in gold/copper — this is the signature brand element
-- Stat numbers use large display serif, unit labels in small-cap sans
-- The dark hero and dark stat banner create a strong top-heavy visual weight — the white space below balances it
-- Top bar uses letterspaced uppercase sans — thin, authoritative
+| File | Component | Notes |
+|------|-----------|-------|
+| `test-02-hero-stats.png` | Hero + stat banner | The most common page type — title + key numbers |
+| `test-03-bar-chart.png` | Bar chart exhibit | Chart inside bordered card, source attribution |
+| `test-04-data-table.png` | Data table | Heat-mapped cells, compact hero for space |
+| `test-05-timeline.png` | Timeline | 4 events, gradient line, compact spacing |
+| `test-06-insight-cards.png` | Insight cards | 3-column grid with faded numbers |
+| `test-07-donut.png` | Donut chart | CSS conic-gradient, side legend |
+| `test-20-one-pager.png` | Full one-pager | Max density: hero + stats + chart |
 
-#### `test-03-bar-chart.png` — Bar Chart Exhibit
-**What to notice:**
-- Exhibit card has a subtle terra/copper top border — the only color accent
-- Bar fills use the c-1/c-2/c-3 palette classes (terra, ink, copper) — distinct but harmonious
-- Chart sits inside a bordered card with generous padding
-- Source attribution at the bottom of the exhibit — always include this
-- Labels are right-aligned sans, values are bold sans on the right
+### Themes
 
-#### `test-04-data-table.png` — Data Table with Heat Map
-**What to notice:**
-- Table header uses dark ink background with white text
-- Heat map classes create subtle background tints (green for high, lighter for med/low)
-- The compact hero (reduced padding) leaves room for the table
-- Clean, scannable rows — no visual clutter
+| File | Theme | Best for |
+|------|-------|----------|
+| `test-13-midnight.png` | Midnight Blue | Corporate, finance, tech |
+| `test-14-forest.png` | Forest Green | ESG, sustainability |
+| `test-15-crimson.png` | Crimson | Security, alerts |
+| `test-16-slate.png` | Slate | Academic, research |
 
-#### `test-05-timeline.png` — Timeline
-**What to notice:**
-- Vertical timeline line with gradient (terra → copper)
-- Circular dot markers at each event
-- Date labels in small uppercase, event titles in bold sans, descriptions in body serif
-- Compact spacing between events to fit 4 on one page
+---
 
-#### `test-06-insight-cards.png` — Three Insight Cards
-**What to notice:**
-- 3-column grid of cards with terra top border
-- Large faded numbers (01, 02, 03) create visual rhythm
-- Short, punchy titles with minimal body text
-- Cards should feel like quick-scan takeaways, not paragraphs
-
-#### `test-07-donut.png` — Donut Chart
-**What to notice:**
-- CSS-only donut (conic-gradient) — no JavaScript needed
-- Legend beside the donut with color swatches
-- The donut hole is white, creating the ring effect
-- Sized at 160px for compact layouts (default 220px is for full pages)
-
-#### `test-20-one-pager.png` — Full One-Pager (Maximum Density)
-**What to notice:**
-- This is the densest layout — hero + stats + bar chart on one page
-- Everything is scaled down: hero padding, stat sizes, exhibit padding
-- Despite the compression, it still reads cleanly — nothing feels cramped
-- This is the template to reference when someone says "give me everything on one page"
-
-### Midnight Blue Theme
-
-#### `test-13-midnight.png` — Corporate/Finance
-**What to notice:**
-- Deep navy gradient replacing the warm earth tones
-- Accent color shifts to steel blue/slate — appropriate for financial services
-- Stat numbers in light blue against navy — high contrast, trustworthy feel
-- The mood is "Bloomberg terminal meets annual report"
-
-### Forest Green Theme
-
-#### `test-14-forest.png` — ESG/Sustainability
-**What to notice:**
-- Dark forest green gradient with warm gold italic accent
-- The gold on green is the standout combination — luxurious but grounded
-- Bar chart uses green spectrum (different values, not different hues)
-- Mint-tinted page background extends the green identity subtly
-
-### Crimson Theme
-
-#### `test-15-crimson.png` — Security/Alerts
-**What to notice:**
-- Deep maroon-to-black gradient — conveys urgency without being garish
-- Italic accent word in soft pink — editorial restraint even in an "alert" context
-- Red left-border on callout box draws the eye to critical content
-- The palette says "this matters" without screaming
-
-### Slate Theme
-
-#### `test-16-slate.png` — Academic/Minimal
-**What to notice:**
-- No chromatic accent — relies entirely on typographic hierarchy
-- Drop cap adds editorial personality without color
-- "Working Paper No." kicker establishes the academic register
-- The most restrained theme — ideal for research papers, policy briefs
-- Bold text is the only emphasis mechanism — use sparingly
-
-## Design Principles Visible Across All Templates
+## Design Principles Visible Across All References
 
 1. **Color restraint** — One accent color, used sparingly. Most of the page is text on neutral backgrounds.
 2. **Typography does the heavy lifting** — Serif headlines create authority. Sans labels create structure. The italic accent word is the signature.
-3. **Generous whitespace** — Even on dense layouts, nothing touches the edges. Padding and margins create breathing room.
-4. **Dark hero, light body** — The gradient hero establishes visual weight at the top. The lighter body section is where the reader settles in.
-5. **Exhibits are contained** — Charts, tables, and data live inside bordered cards with consistent styling. They never float freely.
-6. **Source attribution** — Every exhibit has a source line. This is non-negotiable for professional reports.
+3. **Generous whitespace** — Even on dense layouts, nothing touches the edges.
+4. **Dark hero, light body** — The gradient hero establishes visual weight at the top. The lighter body section is where reading happens.
+5. **Exhibits are contained** — Charts, tables, and data live inside bordered cards. They never float freely.
+6. **Source attribution** — Every exhibit has a source line. Non-negotiable.
+7. **AI-generated cover art** — Premium reports use custom illustrations that match the topic. This is the biggest quality differentiator.
+8. **Stats are scannable** — Large numbers, small labels, 3-second comprehension.
+9. **Pull quotes break monotony** — A well-placed quote between data sections gives the reader a breather.
+10. **Heat-map tables** — Color-coded cells draw eyes to the most important numbers.
