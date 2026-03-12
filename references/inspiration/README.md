@@ -49,15 +49,6 @@ A long-form technology analysis report in consulting style.
 - Metadata row (date, authors, reading time) gives instant context
 - The transition from dark hero to white exec summary creates visual rhythm
 
-### V2 Template Report
-
-A cleaner, refined version of the template system.
-
-| File | What it shows | Key design elements |
-|------|---------------|---------------------|
-| `ref-v2-cover.png` | **Cover page** | Dark hero, serif title with gold italic accent, subtitle, metadata row |
-| `ref-v2-stats.png` | **Executive summary + stats** | Drop-cap lead, accent top border, stat banner with gold numbers |
-| `ref-v2-chart.png` | **Key statistics page** | 4-stat grid on dark banner with gold numerals |
 
 ---
 

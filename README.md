@@ -100,7 +100,6 @@ Full PDF reports built with this skill, included in the repo as references:
 |--------|-------|-------------|
 | [Incident Post-Mortem](references/inspiration/reports/incident-report-sev1-postmortem.pdf) | 19 | SEV-1 API gateway outage report with cover art, charts, timelines, tables, root cause cards |
 | [China Analysis](references/inspiration/reports/china-analysis-report.pdf) | 7 | Technology analysis report in consulting style with exec summary and data exhibits |
-| [V2 Template Report](references/inspiration/reports/v2-template-report.pdf) | 11 | Template showcase with ECharts integration |
 
 ## External Inspiration
 
