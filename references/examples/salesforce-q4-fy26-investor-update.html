@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Q4 FY2026 Investor Update | Salesforce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+@page{size:letter;margin:.65in .75in .8in .75in}
+@page:first{margin:0}
+:root{
+  --ink:#051C2C;--body:#1A1A2E;--text:#2D2D3F;--muted:#6B7280;--light:#9CA3AF;
+  --accent:#0070D2;--teal:#00C9C6;--amber:#FF9F43;
+  --white:#FFF;--wash:#F8F9FA;--border:#E5E7EB;--dark:#1A1A2E;
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'DM Sans','Helvetica Neue',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);font-size:14.5px;line-height:1.68;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased}
+
+/* COVER — split layout */
+.cover{width:100%;height:11in;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.cover-img{background:url('cover.jpg') center/cover;position:relative}
+.cover-img::after{content:'';position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(135deg,rgba(5,28,44,.25),rgba(0,112,210,.08))}
+.cover-txt{display:flex;flex-direction:column;justify-content:center;padding:60px 48px 60px 40px;border-left:1px solid var(--border)}
+.cover-brand{display:flex;align-items:center;gap:10px;margin-bottom:48px}
+.cover-brand img{width:32px;height:32px;border-radius:4px}
+.cover-brand span{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:1.5px;text-transform:uppercase}
+.cover-txt h1{font-family:var(--serif);font-size:44px;font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:20px;max-width:360px}
+.cover-txt h1 em{font-style:italic;color:var(--accent)}
+.cover-sub{font-size:14px;line-height:1.6;color:var(--muted);max-width:340px;margin-bottom:32px}
+.cover-meta{font-size:11px;color:var(--muted)}.cover-meta div{margin-bottom:3px}.cover-meta strong{color:var(--ink);font-weight:600}
+
+/* PAGE CHROME */
+.pg{padding:0;display:flex;flex-direction:column;min-height:9.4in}
+.hdr{font-size:8.5px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding-bottom:6px;border-bottom:.5px solid var(--border);margin-bottom:20px;display:flex;justify-content:space-between}
+.ftr{font-size:8.5px;color:var(--light);padding-top:6px;border-top:.5px solid var(--border);margin-top:auto;display:flex;justify-content:space-between;width:100%}
+.accent-rule{width:100%;height:1.5px;background:var(--accent);margin-bottom:0}
+
+/* SECTION DIVIDER — dark full page */
+.divider{background:var(--ink);color:var(--white);height:9.2in;display:flex;flex-direction:column;justify-content:center;padding:0 80px;overflow:hidden}
+.divider .d-num{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.divider .d-title{font-family:var(--serif);font-size:42px;font-weight:400;line-height:1.1;color:var(--white);max-width:500px;margin-bottom:20px}
+.divider .d-sub{font-size:15px;color:rgba(255,255,255,.5);max-width:440px;line-height:1.6}
+
+/* TYPOGRAPHY */
+.ch-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.ch-title{font-family:var(--serif);font-size:28px;font-weight:400;line-height:1.15;color:var(--ink);margin-bottom:16px}
+.ch-intro{font-size:15px;line-height:1.72;color:var(--body);max-width:560px;margin-bottom:20px}
+p{margin-bottom:12px}
+p strong{color:var(--ink);font-weight:600}
+
+/* DISPLAY STAT — hero moment */
+.hero-stat{text-align:center;padding:60px 0;margin:20px 0}
+.hero-stat .hs-num{font-family:var(--sans);font-size:72px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:8px}
+.hero-stat .hs-label{font-size:14px;font-weight:600;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.hero-stat .hs-sub{font-size:13px;color:var(--muted)}
+
+/* SPLIT LAYOUT */
+.split{display:grid;grid-template-columns:200px 1fr;gap:36px}
+.split .side .ch-title{font-size:24px}
+.ch-accent{width:32px;height:2.5px;background:var(--accent);margin:10px 0 16px}
+
+/* STAT STRIP */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);margin:20px 0}
+.stats .s{padding:18px 14px;text-align:center;border-right:1px solid var(--border)}
+.stats .s:last-child{border-right:none}
+.s-num{font-size:30px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:4px}
+.s-label{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.s-sub{font-size:10px;color:var(--muted)}
+
+/* EXHIBIT */
+.exhibit{border:1px solid var(--border);padding:28px;margin:20px 0;position:relative}
+.exhibit::before{content:'';position:absolute;top:0;left:0;right:0;height:2.5px;background:var(--accent)}
+.ex-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.ex-title{font-family:var(--serif);font-size:17px;font-weight:400;color:var(--ink);margin-bottom:2px;line-height:1.3}
+.ex-sub{font-size:11px;color:var(--muted);margin-bottom:20px}
+.ex-src{font-size:9px;color:var(--light);margin-top:16px;padding-top:8px;border-top:1px solid var(--border)}
+
+/* DATA TABLE — dark header per spec */
+.dtbl{width:100%;border-collapse:collapse;font-size:12.5px;border:1px solid var(--ink)}
+.dtbl thead{background:var(--ink);color:var(--white)}
+.dtbl th{padding:8px 14px;text-align:left;font-weight:700;font-size:10px;letter-spacing:.8px;text-transform:uppercase}
+.dtbl td{padding:7px 14px;border-bottom:.5px solid #DDD;color:var(--body)}
+.dtbl tbody tr:nth-child(even){background:#F0F0F0}
+.dtbl .n{font-feature-settings:'tnum' 1,'lnum' 1;font-weight:600}
+.dtbl .hi{background:rgba(0,112,210,.06);font-weight:700;color:var(--ink)}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0}
+.card{border-top:3px solid var(--accent);padding:20px 0}
+.card:nth-child(2){border-color:var(--teal)}.card:nth-child(3){border-color:var(--amber)}
+.card-num{font-size:28px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:6px}
+.card-t{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.card-d{font-size:12px;color:var(--text);line-height:1.55}
+
+/* PULL QUOTE */
+.pq{padding:28px 0;margin:20px 0;border-top:3px solid var(--accent)}
+.pq blockquote{font-family:var(--serif);font-size:20px;font-weight:400;line-height:1.42;color:var(--ink);margin-bottom:8px;max-width:540px}
+.pq cite{font-size:12px;color:var(--muted);font-style:normal;font-weight:600}
+
+/* TWO-COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:16px 0}
+.two-col p{font-size:14px;line-height:1.72;margin-bottom:10px}
+
+/* BANNER (compact section image) */
+.banner{position:relative;width:100%;height:160px;overflow:hidden;margin-bottom:20px}
+.banner img{width:100%;height:100%;object-fit:cover}
+.banner .ov{position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(to right,rgba(5,28,44,.85) 0%,rgba(5,28,44,.3) 60%,transparent 100%);display:flex;align-items:center;padding:0 28px}
+.banner .ov .ch-label{color:var(--teal)}
+.banner .ov .ch-title{color:var(--white);font-size:26px;margin-bottom:0}
+
+/* FOOTER */
+footer{padding:20px 0;border-top:1px solid var(--border)}
+footer p{font-size:10px;color:var(--muted);line-height:1.5;margin-bottom:6px;max-width:540px}
+
+/* PRINT */
+@media print{
+  body{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+  .cover,.cover-img,.cover-img::after,.stats,.divider,.banner,.banner .ov,.exhibit::before,.card,.accent-rule,footer{-webkit-print-color-adjust:exact !important}
+  .cover{page-break-after:always}
+  .divider{page-break-before:always}
+  .exhibit{page-break-inside:avoid !important;break-inside:avoid !important}
+  .hero-stat{page-break-inside:avoid}
+  .stats,.pq,.card,footer{page-break-inside:avoid;break-inside:avoid}
+  .ch-label,.ch-title,h2,h3{page-break-after:avoid;break-after:avoid}
+  .dtbl tr,.two-col>div{page-break-inside:avoid;break-inside:avoid}
+  .dtbl thead{display:table-header-group}
+  .new-page{page-break-before:always !important}
+}
+</style></head><body>
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-img"></div>
+  <div class="cover-txt">
+    <div class="cover-brand"><img src="salesforce-logo.png" alt="Salesforce" style="width:auto;height:28px;border-radius:0"><span>Salesforce</span></div>
+    <h1>The Rise of the <em>Agentic Enterprise</em></h1>
+    <p class="cover-sub">Record Q4 revenue of $11.2 billion. Agentforce ARR surges 169% to $800M. $72 billion in total RPO. A new era of AI-powered enterprise software.</p>
+    <div class="cover-meta">
+      <div><strong>Published</strong> February 25, 2026</div>
+      <div><strong>Ticker</strong> NYSE: CRM</div>
+      <div><strong>Period</strong> Q4 FY26 (ended Jan. 31, 2026)</div>
+    </div>
+  </div>
+</div>
+
+<!-- P2: LETTER + KPI DASHBOARD -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Q4 FY2026 Investor Update</span></div>
+
+  <div class="split">
+    <div class="side">
+      <div class="ch-label">Letter to Shareholders</div>
+      <div class="ch-title">A Defining Year</div>
+      <div class="ch-accent"></div>
+    </div>
+    <div>
+      <p>Fiscal 2026 was a <strong>defining year for Salesforce</strong>. We delivered $41.5 billion in full-year revenue, up 10% year-over-year, and closed the year with a record fourth quarter that exceeded expectations across every key metric.</p>
+      <p>Agentforce has reached <strong>$800 million in annual recurring revenue</strong>, growing 169% year-over-year. We closed over 29,000 deals, with production accounts increasing nearly 50% in Q4. Our platform delivered 2.4 billion Agentic Work Units.</p>
+      <p>We returned <strong>$14.3 billion to shareholders</strong> in FY26 and announce a new $50 billion buyback authorization and 5.8% dividend increase.</p>
+      <div style="margin-top:20px;padding-top:10px;border-top:1px solid var(--border)">
+        <p style="font-weight:700;color:var(--ink);margin-bottom:1px">Marc Benioff</p>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:0">Chair and Chief Executive Officer</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="s"><div class="s-num">$11.2B</div><div class="s-label">Q4 Revenue</div><div class="s-sub">+12% YoY</div></div>
+    <div class="s"><div class="s-num">$72B</div><div class="s-label">Total RPO</div><div class="s-sub">+14% YoY</div></div>
+    <div class="s"><div class="s-num">$800M</div><div class="s-label">Agentforce ARR</div><div class="s-sub">+169% YoY</div></div>
+    <div class="s"><div class="s-num">$3.81</div><div class="s-label">Non-GAAP EPS</div><div class="s-sub">Beat by $0.76</div></div>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>2</span></div>
+</div>
+
+<!-- SECTION DIVIDER: Financial Performance -->
+<div class="divider">
+  <div class="d-num">Chapter 01</div>
+  <div class="d-title">Financial Performance</div>
+  <div class="d-sub">A record quarter capped a record year. Accelerating subscription growth, expanding margins, and robust cash generation.</div>
+  <div style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:500px">
+    <div><div style="font-size:32px;font-weight:700;color:#FF9F43;line-height:1">$41.5B</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">FY26 Revenue</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#FF9F43;line-height:1">34.1%</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Op. Margin</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#FF9F43;line-height:1">$14.4B</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Free Cash Flow</div></div>
+  </div>
+</div>
+
+<!-- P4: FINANCIAL CONTENT + CHART -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Financial Performance</span></div>
+
+  <div class="two-col">
+    <div><p>Fourth quarter revenue of <strong>$11.2 billion</strong> grew 12% year-over-year, including $399 million from the Informatica acquisition. Subscription and support revenue reached $10.7 billion, up 13% YoY. Full-year revenue of $41.5 billion grew 10%.</p></div>
+    <div><p>Non-GAAP operating margin expanded to <strong>34.2% in Q4</strong>, up from 33.1% a year earlier. Free cash flow of $14.4 billion (+16% YoY). The company returned 99% of FCF to shareholders through repurchases and dividends.</p></div>
+  </div>
+
+  <div class="exhibit">
+    <div class="ex-label">Exhibit 1</div>
+    <div class="ex-title">Revenue Acceleration Continues as Agentforce Drives Incremental Growth</div>
+    <div class="ex-sub">Quarterly revenue, Q1 FY25 through Q4 FY26, in billions USD</div>
+    <img src="chart-revenue.png" style="width:100%;height:auto;display:block" alt="">
+    <p class="ex-src">Source: Salesforce Q4 FY26 Earnings Release (February 25, 2026)</p>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>4</span></div>
+</div>
+
+<!-- P5: FINANCIAL TABLE -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Financial Performance</span></div>
+
+  <div class="exhibit" style="margin-top:0">
+    <div class="ex-label">Exhibit 2</div>
+    <div class="ex-title">Broad-Based Improvement Across Revenue, Profitability, and Cash Generation</div>
+    <div class="ex-sub">FY26 full-year financial summary vs. prior year</div>
+    <table class="dtbl"><thead><tr><th>Metric</th><th>FY26</th><th>FY25</th><th>YoY Change</th></tr></thead><tbody>
+      <tr><td>Revenue</td><td class="n hi">$41.5B</td><td class="n">$37.9B</td><td class="hi">+10%</td></tr>
+      <tr><td>Subscription &amp; Support</td><td class="n">$39.5B</td><td class="n">$35.7B</td><td>+11%</td></tr>
+      <tr><td>Non-GAAP Operating Margin</td><td class="n hi">34.1%</td><td class="n">33.0%</td><td class="hi">+110 bps</td></tr>
+      <tr><td>GAAP Operating Margin</td><td class="n">20.1%</td><td class="n">18.3%</td><td>+180 bps</td></tr>
+      <tr><td>Operating Cash Flow</td><td class="n hi">$15.0B</td><td class="n">$13.1B</td><td class="hi">+15%</td></tr>
+      <tr><td>Free Cash Flow</td><td class="n hi">$14.4B</td><td class="n">$12.4B</td><td class="hi">+16%</td></tr>
+      <tr><td>Total RPO</td><td class="n hi">$72.4B</td><td class="n">$63.4B</td><td class="hi">+14%</td></tr>
+      <tr><td>Agentforce ARR</td><td class="n hi">$800M</td><td class="n">$297M</td><td class="hi">+169%</td></tr>
+      <tr><td>Non-GAAP Diluted EPS</td><td class="n hi">$12.18</td><td class="n">$10.43</td><td class="hi">+17%</td></tr>
+      <tr><td>Capital Returned</td><td class="n">$14.3B</td><td class="n">$11.6B</td><td>+23%</td></tr>
+    </tbody></table>
+    <p class="ex-src">Source: Salesforce Q4 FY26 Earnings Release; company filings</p>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>5</span></div>
+</div>
+
+<!-- SECTION DIVIDER: Agentforce -->
+<div class="divider">
+  <div class="d-num">Chapter 02</div>
+  <div class="d-title">The Agentforce Revolution</div>
+  <div class="d-sub">The most significant product launch in Salesforce history.</div>
+  <div style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:500px">
+    <div><div style="font-size:32px;font-weight:700;color:#00C9C6;line-height:1">29K</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Deals Closed</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#00C9C6;line-height:1">2.4B</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Work Units</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#00C9C6;line-height:1">$800M</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">ARR</div></div>
+  </div>
+</div>
+
+<!-- P7: AGENTFORCE CONTENT -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>The Agentforce Revolution</span></div>
+
+  <div class="banner"><img src="section-ai.jpg" alt=""><div class="ov"><div><div class="ch-label">Platform Momentum</div><div class="ch-title">From Copilots to Autonomous Agents</div></div></div></div>
+
+  <div class="two-col">
+    <div><p>Since launching in late 2024, Agentforce has closed <strong>over 29,000 deals</strong>, up 50% quarter-over-quarter. Production accounts increased nearly 50% in Q4. Agentforce ARR reached $800 million, while the broader Agentforce and Data 360 combined ARR exceeded $2.9 billion.</p></div>
+    <div><p>Salesforce introduced <strong>Agentic Work Units (AWUs)</strong> to measure autonomous tasks. In Q4, AWUs reached 2.4 billion, up 57% QoQ. The platform processed nearly 20 trillion tokens. 75% of top-100 deals included both Agentforce and Data 360.</p></div>
+  </div>
+
+  <div class="cards">
+    <div class="card"><div class="card-num">29K</div><div class="card-t">Deals Closed</div><div class="card-d">Since launch, up 50% QoQ. Adoption accelerating across every industry.</div></div>
+    <div class="card"><div class="card-num">2.4B</div><div class="card-t">Agentic Work Units</div><div class="card-d">Autonomous tasks in Q4. Up 57% quarter-over-quarter.</div></div>
+    <div class="card"><div class="card-num">20T</div><div class="card-t">Tokens Processed</div><div class="card-d">Cumulative since launch. 112T records ingested via Data 360.</div></div>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>7</span></div>
+</div>
+
+<!-- P8: DISPLAY STAT + AGENTFORCE CHART -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>The Agentforce Revolution</span></div>
+
+  <div class="hero-stat">
+    <div class="hs-label">Agentforce Annual Recurring Revenue</div>
+    <div class="hs-num">$800M</div>
+    <div class="hs-sub">Up 169% year-over-year, 60% quarter-over-quarter</div>
+  </div>
+
+  <div class="exhibit" style="margin-top:0">
+    <div class="ex-label">Exhibit 3</div>
+    <div class="ex-title">Agentforce ARR Triples in Under a Year</div>
+    <div class="ex-sub">Quarterly ARR progression since launch, in millions USD</div>
+    <img src="chart-agentforce.png" style="width:100%;height:auto;display:block" alt="">
+    <p class="ex-src">Source: Salesforce earnings releases; management commentary</p>
+  </div>
+
+  <div class="pq" style="margin-top:16px">
+    <blockquote>"We have rebuilt Salesforce to become the operating system for the Agentic Enterprise, bringing humans and agents together on one trusted platform."</blockquote>
+    <cite>Marc Benioff, Chair and CEO, Salesforce</cite>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>8</span></div>
+</div>
+
+
+
+<!-- SECTION DIVIDER: Platform -->
+<div class="divider">
+  <div class="d-num">Chapter 03</div>
+  <div class="d-title">Growth Drivers &amp; Platform Strategy</div>
+  <div class="d-sub">Data 360, industry clouds, and the Informatica acquisition are creating an enterprise data flywheel.</div>
+  <div style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:500px">
+    <div><div style="font-size:32px;font-weight:700;color:#00C9C6;line-height:1">112T</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Records Ingested</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#00C9C6;line-height:1">$6.6B</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Industry ARR</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#00C9C6;line-height:1">310%</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Zero Copy Growth</div></div>
+  </div>
+</div>
+
+<!-- P11: PLATFORM CONTENT -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Growth Drivers</span></div>
+
+  <div class="banner"><img src="section-platform.jpg" alt=""><div class="ov"><div><div class="ch-label">Data 360</div><div class="ch-title">The Data Flywheel</div></div></div></div>
+
+  <div class="split">
+    <div class="side">
+      <div class="ch-title" style="font-size:22px">More Data, Smarter Agents</div>
+      <div class="ch-accent"></div>
+    </div>
+    <div>
+      <p>Industry-specific businesses finished FY26 at <strong>$6.6 billion in ARR</strong>, up nearly 20% YoY. The Informatica acquisition ($8B) added enterprise data management capabilities.</p>
+      <p>Data 360 ingested <strong>112 trillion records</strong> in FY26, up 114% YoY, including 53 trillion via Zero Copy (+310% YoY). Over 60% of bookings came from existing customers expanding.</p>
+    </div>
+  </div>
+
+  <div class="exhibit">
+    <div class="ex-label">Exhibit 4</div>
+    <div class="ex-title">Data Cloud Emerges as Fastest-Growing Segment</div>
+    <div class="ex-sub">FY26 subscription revenue breakdown by cloud</div>
+    <img src="chart-mix.png" style="width:100%;height:auto;display:block" alt="">
+    <p class="ex-src">Source: Salesforce FY26 Annual Report; management estimates</p>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>11</span></div>
+</div>
+
+<!-- P12: CLOUD BREAKDOWN TABLE -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Growth Drivers</span></div>
+
+  <div class="exhibit" style="margin-top:0">
+    <div class="ex-label">Exhibit 5</div>
+    <div class="ex-title">Data Cloud Leads Growth at +30% YoY</div>
+    <div class="ex-sub">Q4 FY26 revenue by cloud, in billions USD</div>
+    <table class="dtbl"><thead><tr><th>Cloud</th><th>Q4 FY26</th><th>Q4 FY25</th><th>YoY</th></tr></thead><tbody>
+      <tr><td>Sales Cloud</td><td class="n">$2.22B</td><td class="n">$2.07B</td><td>+7%</td></tr>
+      <tr><td>Service Cloud</td><td class="n">$2.29B</td><td class="n">$2.14B</td><td>+7%</td></tr>
+      <tr><td>Platform &amp; Other</td><td class="n hi">$2.03B</td><td class="n">$1.80B</td><td class="hi">+13%</td></tr>
+      <tr><td>Data Cloud (incl. Informatica)</td><td class="n hi">$1.87B</td><td class="n">$1.44B</td><td class="hi">+30%</td></tr>
+      <tr><td>Marketing &amp; Commerce</td><td class="n">$1.41B</td><td class="n">$1.28B</td><td>+10%</td></tr>
+      <tr><td>Integration &amp; Analytics</td><td class="n">$0.84B</td><td class="n">$0.77B</td><td>+9%</td></tr>
+    </tbody></table>
+    <p class="ex-src">Source: Salesforce Q4 FY26 Earnings Release; segment reporting</p>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>12</span></div>
+</div>
+
+<!-- SECTION DIVIDER: Customers -->
+<div class="divider">
+  <div class="d-num">Chapter 04</div>
+  <div class="d-title">Customer Impact</div>
+  <div class="d-sub">From pilot to production: how enterprises across industries are deploying Agentforce at scale.</div>
+  <div style="margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:400px">
+    <div><div style="font-size:32px;font-weight:700;color:#FF9F43;line-height:1">40%</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Resolution Lift</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#FF9F43;line-height:1">3x</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Matching Speed</div></div>
+  </div>
+</div>
+
+<!-- P14: CUSTOMER STORIES -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Customer Impact</span></div>
+
+  <div class="ch-label">Enterprise Adoption</div>
+  <div class="ch-title">Agentforce in Production</div>
+  <div class="ch-accent"></div>
+
+  <div class="two-col">
+    <div>
+      <p><strong>Wiley (Education)</strong> &mdash; Customer service resolution rate increased 40%. AI agents handle tier-1 inquiries autonomously, freeing human agents for complex cases.</p>
+      <p><strong>Saks Fifth Avenue (Retail)</strong> &mdash; Personal shopping agents drive double-digit AOV lift through hyper-personalized recommendations combining purchase history and inventory data.</p>
+    </div>
+    <div>
+      <p><strong>OpenTable (Hospitality)</strong> &mdash; Reservation management automated end-to-end, processing thousands of requests per hour during peak dining with near-zero error rates.</p>
+      <p><strong>Adecco Group (Staffing)</strong> &mdash; Candidate matching velocity accelerated 3x using AI-powered resume parsing, skills assessment, and cultural-fit scoring.</p>
+    </div>
+  </div>
+
+  <div class="hero-stat" style="padding:40px 0">
+    <div class="hs-label">Enterprise ROI</div>
+    <div class="hs-num" style="font-size:48px">30&ndash;50%</div>
+    <div class="hs-sub">Reduction in routine task handling time across Agentforce deployments</div>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>14</span></div>
+</div>
+
+<!-- SECTION DIVIDER: Capital Return -->
+<div class="divider">
+  <div class="d-num">Chapter 05</div>
+  <div class="d-title">Capital Return &amp; Shareholder Value</div>
+  <div class="d-sub">Returning capital at an unprecedented pace.</div>
+  <div style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:500px">
+    <div><div style="font-size:32px;font-weight:700;color:#FF9F43;line-height:1">$50B</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">New Buyback</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#FF9F43;line-height:1">99%</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">FCF Returned</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#FF9F43;line-height:1">$14.3B</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">Total Returned</div></div>
+  </div>
+</div>
+
+<!-- P16: CAPITAL RETURN -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Capital Return</span></div>
+
+  <div class="split">
+    <div class="side">
+      <div class="ch-label">Returning Value</div>
+      <div class="ch-title" style="font-size:22px">$50 Billion Buyback</div>
+      <div class="ch-accent"></div>
+    </div>
+    <div>
+      <p>In FY26, Salesforce returned <strong>$14.3 billion to shareholders</strong> &mdash; 99% of free cash flow &mdash; including $12.7 billion in repurchases and $1.6 billion in dividends.</p>
+      <p>A new <strong>$50 billion share repurchase authorization</strong> was announced, one of the largest in enterprise software history. The quarterly dividend increased 5.8% to $0.42 per share.</p>
+    </div>
+  </div>
+
+  <div class="exhibit">
+    <div class="ex-label">Exhibit 6</div>
+    <div class="ex-title">99% of Free Cash Flow Returned to Shareholders in FY26</div>
+    <div class="ex-sub">Capital return summary vs. prior year</div>
+    <table class="dtbl"><thead><tr><th>Item</th><th>FY26</th><th>FY25</th><th>Change</th></tr></thead><tbody>
+      <tr><td>Share Repurchases</td><td class="n hi">$12.7B</td><td class="n">$9.5B</td><td class="hi">+34%</td></tr>
+      <tr><td>Dividends Paid</td><td class="n">$1.6B</td><td class="n">$2.1B</td><td>&mdash;</td></tr>
+      <tr><td>Total Capital Returned</td><td class="n hi">$14.3B</td><td class="n">$11.6B</td><td class="hi">+23%</td></tr>
+      <tr><td>% of FCF Returned</td><td class="n hi">99%</td><td class="n">94%</td><td class="hi">+5pp</td></tr>
+      <tr><td>New Buyback Authorization</td><td class="n hi">$50B</td><td class="n">$10B</td><td class="hi">5x</td></tr>
+    </tbody></table>
+    <p class="ex-src">Source: Salesforce Q4 FY26 Earnings Release; Board authorization</p>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>16</span></div>
+</div>
+
+<!-- SECTION DIVIDER: Outlook -->
+<div class="divider">
+  <div class="d-num">Chapter 06</div>
+  <div class="d-title">Forward Guidance &amp; Outlook</div>
+  <div class="d-sub">FY27 guidance and the path to $63 billion.</div>
+  <div style="margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:400px">
+    <div><div style="font-size:32px;font-weight:700;color:#00C9C6;line-height:1">~$46B</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">FY27 Guide</div></div>
+    <div><div style="font-size:32px;font-weight:700;color:#00C9C6;line-height:1">$63B</div><div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px">FY30 Target</div></div>
+  </div>
+</div>
+
+<!-- P18: OUTLOOK -->
+<div class="pg">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Outlook</span></div>
+
+  <div class="split">
+    <div class="side">
+      <div class="ch-label">Looking Ahead</div>
+      <div class="ch-title" style="font-size:22px">The Path to $63 Billion</div>
+      <div class="ch-accent"></div>
+    </div>
+    <div>
+      <p>For <strong>FY27</strong>, Salesforce guides revenue of $45.8&ndash;$46.2 billion (+10&ndash;11%). Q1 FY27 expected at $10.65&ndash;$10.70 billion. Non-GAAP operating margin guided to 34.0%.</p>
+      <p>Subscription growth should remain in the <strong>low double digits</strong>, driven by Agentforce attach rates and Data 360 expansion. Informatica integration on track for $200M in run-rate synergies by early FY28.</p>
+      <p>Management reiterated its <strong>FY30 target of $63 billion</strong>, implying a mid-teens CAGR. The bull case: Agentforce becomes a usage-based revenue engine at scale.</p>
+    </div>
+  </div>
+
+  <div class="cards" style="margin-top:28px">
+    <div class="card"><div class="card-num">01</div><div class="card-t">Agentforce Monetization</div><div class="card-d">Usage-based pricing on 2.4B+ AWUs creates a revenue engine that scales with customer value.</div></div>
+    <div class="card"><div class="card-num">02</div><div class="card-t">Data Gravity Moat</div><div class="card-d">112 trillion records in Data 360. Switching costs compound with every integration.</div></div>
+    <div class="card"><div class="card-num">03</div><div class="card-t">Capital Return Machine</div><div class="card-d">$50B buyback. 99% of FCF returned. Growth and returns simultaneously.</div></div>
+  </div>
+
+  <div class="ftr"><span>Confidential</span><span>18</span></div>
+</div>
+
+<!-- P19: CLOSING QUOTE + DISCLAIMER -->
+<div class="pg new-page" style="display:flex;flex-direction:column">
+  <div class="accent-rule"></div>
+  <div class="hdr"><span>Salesforce, Inc.</span><span>Q4 FY2026 Investor Update</span></div>
+
+  <div style="flex:1;display:flex;align-items:center">
+    <div class="pq" style="margin:0;max-width:580px">
+      <blockquote>"Agentforce is the most transformative technology Salesforce has ever developed. It is fundamentally changing the way businesses operate."</blockquote>
+      <cite>Marc Benioff, Q4 FY26 Earnings Call</cite>
+    </div>
+  </div>
+
+  <footer>
+    <p>This document is for informational purposes only and does not constitute investment advice, an offer to sell, or a solicitation of an offer to buy any securities. Forward-looking statements involve risks and uncertainties.</p>
+    <p>Data sourced from Salesforce, Inc. Q4 FY26 Earnings Release (February 25, 2026), SEC filings, and management commentary.</p>
+  </footer>
+
+  <div class="ftr"><span>Salesforce, Inc. / NYSE: CRM</span><span>19</span></div>
+</div>
+</body></html>

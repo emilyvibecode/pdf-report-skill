@@ -55,10 +55,11 @@ if (!fs.existsSync(inputPath)) {
     await new Promise(r => setTimeout(r, 2000));
   }
 
-  // Generate PDF
+  // Generate PDF — prefer CSS @page size if set (enables landscape, A4, custom sizes)
   await page.pdf({
     path: outputPath,
     format: 'Letter',
+    preferCSSPageSize: true,
     printBackground: true,
     margin: { top: 0, right: 0, bottom: 0, left: 0 }
   });

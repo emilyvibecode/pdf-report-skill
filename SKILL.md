@@ -253,7 +253,14 @@ When combining multiple components on one page, the default hero padding (80px t
 | Table + Impl | `references/examples/test-19-table-impl.html` | Risk table + implications (dense layout) |
 | Full One-Pager | `references/examples/test-20-one-pager.html` | Compact hero + stats + bar chart (max density) |
 
-**How to use:** Read the example closest to what you need, then adapt the content. The sizing and spacing in each example is already validated to fit one page.
+**Full report examples** (multi-page, production-quality):
+
+| Report | File | Description |
+|--------|------|-------------|
+| NYC Snowstorm 2026 | `references/examples/nyc-snowstorm-report-2026.html` | 19-page consulting report, Midnight Blue theme, custom brand |
+| Salesforce Q4 FY26 | `references/examples/salesforce-q4-fy26-investor-update.html` | 19-page McKinsey-style investor update, custom palette, split cover, dark chapter dividers |
+
+**How to use:** Read the example closest to what you need, then adapt the content. Single-page templates are validated to fit one page. Full reports demonstrate multi-page layout, page breaks, and content variety.
 
 ## Visual References
 
