@@ -241,7 +241,7 @@ When combining multiple components on one page, the default hero padding (80px t
 | Donut Chart | `references/examples/test-07-donut.html` | Donut chart + legend (compact, 160px donut) |
 | Pull Quote | `references/examples/test-08-pull-quote.html` | Quote block |
 | Two-Column | `references/examples/test-09-two-col.html` | Side-by-side narrative text |
-| Implications | `references/examples/test-10-implications.html` | 2×2 grid with emoji icons (compact) |
+| Implications | `references/examples/test-10-implications.html` | 2×2 grid with colored left borders (compact) |
 | Callout + Sidebar | `references/examples/test-11-callout-sidebar.html` | Callout box + case study sidebar |
 | Table of Contents | `references/examples/test-12-toc.html` | TOC with dotted leaders |
 | Midnight Theme | `references/examples/test-13-midnight.html` | Corporate/finance blue theme |

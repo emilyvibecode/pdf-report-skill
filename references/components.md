@@ -279,22 +279,22 @@ Heat map classes: `.heat-high` (strong), `.heat-med` (moderate), `.heat-low` (su
 ```html
 <div class="implications-grid">
   <div class="impl-card">
-    <div class="impl-icon">🎯</div>
+    
     <div class="impl-title">Takeaway title</div>
     <div class="impl-text">What this means and what action to take.</div>
   </div>
   <div class="impl-card">
-    <div class="impl-icon">📊</div>
+    
     <div class="impl-title">Takeaway title</div>
     <div class="impl-text">Description of implication.</div>
   </div>
   <div class="impl-card">
-    <div class="impl-icon">🔑</div>
+    
     <div class="impl-title">Takeaway title</div>
     <div class="impl-text">Description of implication.</div>
   </div>
   <div class="impl-card">
-    <div class="impl-icon">🌍</div>
+    
     <div class="impl-title">Takeaway title</div>
     <div class="impl-text">Description of implication.</div>
   </div>
